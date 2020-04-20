@@ -78,6 +78,8 @@ class App extends Component {
     }
 
     // comm
+    // commit merge
+    // commit 3
     const charList = this.state.userInput.split("").map((ch, index) => {
       return (
         <Char
