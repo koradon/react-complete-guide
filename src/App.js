@@ -18,7 +18,7 @@ class App extends Component {
     this.setState({ persons: persons });
   };
 
-  // comment 2
+  // comment 3
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((p) => {
       return p.id === id;
