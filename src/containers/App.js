@@ -11,20 +11,20 @@ class App extends Component {
     persons: [
       { id: "asfs", name: "Max", age: 28 },
       { id: "fghs", name: "Manu", age: 29 },
-      { id: "jnoi", name: "Stephanie", age: 26 }
+      { id: "jnoi", name: "Stephanie", age: 26 },
     ],
     showPersons: false,
-    userInput: ""
+    userInput: "",
   };
 
-  deletePersonHandler = personIndex => {
+  deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
   };
 
   nameChangedHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p => {
+    const personIndex = this.state.persons.findIndex((p) => {
       return p.id === id;
     });
     const person = { ...this.state.persons[personIndex] };
@@ -34,7 +34,7 @@ class App extends Component {
     persons[personIndex] = person;
 
     this.setState({
-      persons: persons
+      persons: persons,
     });
   };
 
@@ -43,11 +43,11 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   };
 
-  inputChangedHandler = event => {
+  inputChangedHandler = (event) => {
     this.setState({ userInput: event.target.value });
   };
 
-  deleteCharHandler = index => {
+  deleteCharHandler = (index) => {
     const text = this.state.userInput.split("");
     text.splice(index, 1);
     const updatedText = text.join("");
@@ -60,7 +60,7 @@ class App extends Component {
       font: "inherit",
       border: "1px solid blue",
       padding: "8px",
-      cursor: "pointer"
+      cursor: "pointer",
     };
 
     let persons = null;
@@ -77,6 +77,7 @@ class App extends Component {
       );
     }
 
+    // comm
     const charList = this.state.userInput.split("").map((ch, index) => {
       return (
         <Char
