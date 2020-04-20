@@ -7,19 +7,20 @@ class App extends Component {
     persons: [
       { id: "asfs", name: "Max", age: 28 },
       { id: "fghs", name: "Manu", age: 29 },
-      { id: "jnoi", name: "Stephanie", age: 26 }
+      { id: "jnoi", name: "Stephanie", age: 26 },
     ],
-    showPersons: false
+    showPersons: false,
   };
 
-  deletePersonHandler = personIndex => {
+  deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
   };
 
+  // comment
   nameChangedHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p => {
+    const personIndex = this.state.persons.findIndex((p) => {
       return p.id === id;
     });
     const person = { ...this.state.persons[personIndex] };
@@ -29,7 +30,7 @@ class App extends Component {
     persons[personIndex] = person;
 
     this.setState({
-      persons: persons
+      persons: persons,
     });
   };
 
@@ -44,7 +45,7 @@ class App extends Component {
       font: "inherit",
       border: "1px solid blue",
       padding: "8px",
-      cursor: "pointer"
+      cursor: "pointer",
     };
 
     let persons = null;
@@ -59,7 +60,7 @@ class App extends Component {
                 name={person.name}
                 age={person.age}
                 key={person.id}
-                changed={event => this.nameChangedHandler(event, person.id)}
+                changed={(event) => this.nameChangedHandler(event, person.id)}
               />
             );
           })}
